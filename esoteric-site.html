@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эзотерический Портал: Тайны Вселенной</title>
+    <style>
+        body {
+            background-color: #2c003e;
+            color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background: linear-gradient(to bottom, #4b0082, #000);
+            padding: 20px;
+            color: #fff;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+        button {
+            background-color: #8a2be2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #9370db;
+        }
+        #tarot-result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        footer {
+            background: #000;
+            padding: 10px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Эзотерический Портал: Тайны Вселенной</h1>
+        <p>Добро пожаловать в мир мистики, астрологии и духовного роста!</p>
+    </header>
+
+    <section id="tarot">
+        <h2>Гадание на Таро</h2>
+        <p>Нажмите кнопку, чтобы вытянуть случайную карту Таро и получить предсказание.</p>
+        <button onclick="drawTarotCard()">Вытянуть карту</button>
+        <div id="tarot-result"></div>
+    </section>
+
+    <section id="astrology">
+        <h2>Астрология</h2>
+        <p>Ваш гороскоп на сегодня: Звезды говорят, что сегодня день для новых начинаний. Будьте открыты к изменениям!</p>
+        <!-- Здесь можно добавить больше контента, например, форму для ввода даты рождения -->
+    </section>
+
+    <section id="crystals">
+        <h2>Исцеление Кристаллами</h2>
+        <p>Аметист: Помогает в медитации и защите от негатива.<br>
+        Розовый кварц: Привлекает любовь и гармонию.<br>
+        Обсидиан: Защищает от негативной энергии.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Эзотерический Портал. Все права защищены. Создано с помощью Grok.</p>
+    </footer>
+
+    <script>
+        const tarotCards = [
+            { name: "Колесница", meaning: "Успех через решимость и контроль." },
+            { name: "Влюбленные", meaning: "Гармония в отношениях и важные выборы." },
+            { name: "Башня", meaning: "Неожиданные изменения, разрушающие старое для нового начала." },
+            { name: "Солнце", meaning: "Счастье, успех и позитивная энергия." },
+            { name: "Смерть", meaning: "Трансформация и конец одного цикла для начала другого." }
+        ];
+
+        function drawTarotCard() {
+            const randomIndex = Math.floor(Math.random() * tarotCards.length);
+            const card = tarotCards[randomIndex];
+            document.getElementById('tarot-result').innerHTML = `Вы вытянули: <strong>${card.name}</strong><br>Значение: ${card.meaning}`;
+        }
+    </script>
+</body>
+</html>
